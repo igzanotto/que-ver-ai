@@ -1,8 +1,7 @@
 import { createParser } from 'eventsource-parser';
-import { OPENAI_API_KEY } from '$env/static/private';
 import { kv } from '@vercel/kv';
 
-const key = OPENAI_API_KEY;
+const key = process.env.OPENAI_API_KEY || ''
 
 // Object to store the number of requests made by each user and their last request timestamp
 interface UserRequestData {
